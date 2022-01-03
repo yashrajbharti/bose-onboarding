@@ -1,0 +1,312 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <title>8th Wall Web: Annotation</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script src="//cdn.8thwall.com/web/aframe/8frame-1.2.0.min.js"></script>
+
+  <!-- XR Extras - provides utilities like load screen, almost there, and error handling.
+         See github.com/8thwall/web/tree/master/xrextras -->
+  <script src="//cdn.8thwall.com/web/xrextras/xrextras.js"></script>
+
+  <!-- 8thWall Web - Replace the app key here with your own app key -->
+  <script async src="//apps.8thwall.com/xrweb?appKey=rEa1XLcY7IqpvEyfYKLIofQoiidwfKGpXGJWxemSziLHxE00ZHVIx6XXW2dfDZiCFkKz9v"></script>
+
+</head>
+
+<body>
+  <div class="top-right" style="position: absolute; z-index: 10;">
+  <label class="switch">
+    <input type="checkbox" id="checkbox1">
+    <span class="slider"></span>
+  </label>
+  </div>
+  <div id="bottom-right" style="position: absolute; z-index: 10">
+    <button id="start"><span id="prevarrow">&#10148;</span> Start <span>&#10148;</span></button>
+
+      <button type="button" name="button" id="prev"><span id="prevarrow">&#10148;</span> Prev Step</button>
+      <p id="info">Follow the Steps top part</p>
+      <button type="button" name="button" id="next">Next Step <span>&#10148;</span></button>
+  </div>
+<!-- COPY -->
+  <div class="top-right2" style="position: absolute; z-index: 10;">
+  <label class="switch2">
+    <input type="checkbox" id="checkbox2">
+    <span class="slider"></span>
+  </label>
+  </div>
+  <div id="bottom-right2" style="position: absolute; z-index: 10">
+    <button id="start2"><span id="prevarrow2">&#10148;</span> Start2 <span>&#10148;</span></button>
+
+      <button type="button" name="button2" id="prev2"><span id="prevarrow2">&#10148;</span> Prev2 Step</button>
+      <p id="info2">Follow2 the Steps for side part</p>
+      <button type="button" name="button" id="next2">Next2 Step <span>&#10148;</span></button>
+  </div>
+  <div style="position: absolute; z-index: 10">
+
+    <div id="simpleModal" class="modal">
+      <div class="modal-content">
+          <div class="modal-header">
+            <span class="closeBtn">&times;</span>
+
+            <h2>MAINTENANCE</h2>
+          </div>
+          <div class="modal-body">
+          <p><strong>TROUBLESHOOTING</strong></p>
+        <p><strong>Speaker will not turn on (AC power):</strong>  Make sure your system is connected to a working AC (mains) outlet. Make sure you are using the Bose power supply that shipped with your speaker, or a Bose accessory charger designed for the Soundlink® mini speaker. Make sure you are using the Bose power supply that shipped with your speaker, or a Bose accessory charger designed for the Soundlink® mini speaker.</p>
+        <p><strong>Speaker will not turn on (battery power):</strong> Battery may be in protection mode or discharged. Connect to working AC outlet to restore the battery to operational mode.</p>
+        <p><strong>Paired Bluetooth device will not connect to the speaker:</strong> If your device requires a passcode, make sure the one you entered is correct. Make sure Bluetooth functionality is turned on or enabled on your source device. Your Bluetooth device may be out of range—try moving it closer to the speaker. If possible, turn off all other nearby Bluetooth devices or disable their Bluetooth functionality. Reset the speaker. Press the Mute button for ten seconds, until the indicators briefly flash. Your Bluetooth device is disconnected and the SoundLink® Mini speaker turns off. Press the Power button to turn the speaker back on, and reconnect. Clear the speaker memory. Pair the Bluetooth device and the speaker again. Turn the power off and back on, and reconnect.</p>
+          </div>
+          <div class="modal-footer">
+            <h3>SoundLink Mini, Bose &copy;</h3>
+          </div>
+      </div>
+    </div>
+  <div id="simpleModalB" class="modalB">
+    <div class="modal-content">
+        <div class="modal-header">
+          <span class="closeBtnB">&times;</span>
+
+          <h2>OPERATION</h2>
+        </div>
+        <div class="modal-body">
+        <p>The control buttons are located on the top of the speaker.</p>
+        <p><strong>Power Button:</strong> Press to turn the speaker on or off. Press and hold to check the battery charge state.</p>
+        <p><strong>Mute Button:</strong> Press to mute/unmute sound from the speaker.</p>
+        <p><strong>Volume (-) Button:</strong> Minus (-) decreases speaker volume. Press and hold the button to continuosly decrease the volume.</p>
+        <p><strong>Volume (+) Button:</strong> Plus (+) increases speaker volume. Press and hold the button to continuously increase the volume.</p>
+        <p><strong>Bluetooth Button:</strong> Press to select the Bluetooth source. The speaker attempts to connect to the last paired device. If there are no paired devices, the speaker goes into discoverable mode.</p>
+        <p><strong>AUX Button:</strong> Press to select the source connected to the AUX input.</p>
+
+
+        </div>
+        <div class="modal-footer">
+          <h3>SoundLink Mini, Bose &copy;</h3>
+        </div>
+    </div>
+  </div>
+
+    <div id="simpleModalC" class="modalC">
+      <div class="modal-content">
+          <div class="modal-header">
+            <span class="closeBtnC">&times;</span>
+
+            <h2>REPLACING THE BATTERY</h2>
+          </div>
+          <div class="modal-body">
+            <p>The battery should be replaced when: <br>•The battery status indicator remains yellow after ten hours of charging. <br>• The period of battery operation noticeably decreases.<br>• Only use Bose authorized batteries.<br>• Check out this link <a href="https://youtu.be/nWFR_7TzoK8">How to Replace Bose Sound Mini Battery</a></p>
+            <p>For replacement batteries, contact Bose® in your country/region (visit <a href="http://global.Bose.com" target="_blank">Bose Global</a> for Bose contact information in your country or region).</p>
+            </div>
+          <div class="modal-footer">
+            <h3>SoundLink Mini, Bose &copy;</h3>
+          </div>
+      </div>
+    </div>
+
+
+    <div id="simpleModalD" class="modalD">
+      <div class="modal-content">
+          <div class="modal-header">
+            <span class="closeBtnD">&times;</span>
+
+            <h2>CLEANING</h2>
+          </div>
+          <div class="modal-body">
+          <p>To clean the exterior surface of your product, you can wipe it using a soft, dry cloth. <br>• Do not use solvents, chemicals, or sprays. <br>• Do not allow liquids to spill or objects to drop into any openings.</p>
+          </div>
+          <div class="modal-footer">
+            <h3>SoundLink Mini, Bose &copy;</h3>
+          </div>
+      </div>
+    </div>
+
+    <div id="simpleModalE" class="modalE">
+      <div class="modal-content">
+          <div class="modal-header">
+            <span class="closeBtnE">&times;</span>
+
+            <h2>CONTACT SUPPORT</h2>
+          </div>
+          <div class="modal-body">
+          <p>For questions about the Bose® SoundLink® Mini speaker, contact your local Bose dealer. To contact Bose directly, see the contact list at the end of this guide, or visit <a href="https://global.bose.com/en_us/support_sites.html" target="_blank">Bose Support</a>.</p>
+          </div>
+          <div class="modal-footer">
+            <h3>SoundLink Mini, Bose &copy;</h3>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <a-scene
+    xrextras-gesture-detector
+    xrextras-almost-there
+    xrextras-loading
+    xrextras-runtime-error
+    renderer="colorManagement:true"
+    xrweb="disableWorldTracking: true">
+
+    <a-assets>
+      <!-- Credit to Poly by Google for the model: https://poly.google.com/view/dA5osnS0Rzj -->
+      <a-asset-item id="arrow" src="arrow/arrow.glb"></a-asset-item>
+
+    </a-assets>
+
+    <a-camera
+      position="0 4 10"
+      raycaster="objects: .clickable"
+      cursor="fuse: false; rayOrigin: mouse;">
+    </a-camera>
+
+    <a-light type="directional" intensity="0.5" position="1 1 1"></a-light>
+
+    <a-light type="ambient" intensity="1"></a-light>
+
+    <!-- Note: "name:" must be set to the name of the image target uploaded to the 8th Wall Console -->
+    <!-- Note: "name:" must be set to the name of the image target uploaded to the 8th Wall Console -->
+
+    <xrextras-named-image-target name="Top">
+
+
+      <a-entity id="faqtext" visible="true" text="value:MAINTENANCE; color:#fff; shader: msdf; font:./aclonica/Aclonica-Regular.json;" scale="1.2 1.2 1.2" position="0.12 0.38 0"></a-entity>
+      <a-plane  id="modalBtn" class="button0 clickable" visible="true" color="#67a5aa" opaciy="0.5" position="-0.31 0.4 -0.0000001" height="0.08" width="0.37" rotation="0 0 0"></a-plane>
+
+      <a-entity id="faqtext" visible="true" text="value:SETTING UP THE AUDIO; color:#fff; shader: msdf; font:./aclonica/Aclonica-Regular.json;" scale="1.2 1.2 1.2" position="0.50 0.38 0"></a-entity>
+      <a-plane  id="modalBtnC" class="button0 clickable" visible="true" color="#67a5aa" opaciy="0.5" position="0.185 0.4 -0.0000001" height="0.08" width="0.59" rotation="0 0 0"></a-plane>
+
+      <a-entity id="faqtext" visible="true" text="value:CLEANING; color:#fff; shader: msdf; font:./aclonica/Aclonica-Regular.json;" scale="1.2 1.2 1.2" position="0.16 0.28 0"></a-entity>
+      <a-plane  id="modalBtnD" class="button0 clickable" visible="true" color="#67a5aa" opaciy="0.5" position="-0.31 0.3 -0.0000001" height="0.08" width="0.37" rotation="0 0 0"></a-plane>
+
+      <a-entity id="faqtext" visible="true" text="value:CONTACT SUPPORT; color:#fff; shader: msdf; font:./aclonica/Aclonica-Regular.json;" scale="1.2 1.2 1.2" position="0.56 0.28 0"></a-entity>
+      <a-plane  id="modalBtnE" class="button0 clickable" visible="true" color="#67a5aa" opaciy="0.5" position="0.185 0.3 -0.0000001" height="0.08" width="0.59" rotation="0 0 0"></a-plane>
+
+
+      <a-plane id="place" color="#fff" opacity="0.0" position="0 0 0" scale="1 1 1" height="100" width="100" rotation="0 0 0">
+
+        <a-entity class="slide" visible="false" gltf-model="#arrow" rotation="0 0 90" scale="0.0023 0.0023 0.0023" position="-0.42 -0.27 0"></a-entity>
+        <a-entity class="slide2" visible="false" text="value:On/Off; color:#0ff; shader: msdf; font:./aclonica/Aclonica-Regular.json;" scale="1.2 1.2 1.2" position="0.1 -0.445 0"></a-entity>
+
+        <a-entity class="slide" visible="false" gltf-model="#arrow" rotation="0 0 -90" scale="0.0023 0.0023 0.0023" position="-0.256 0.02 0"></a-entity>
+        <a-entity class="slide2" visible="false" text="value:Mute; color:#0ff; shader: msdf; font:./aclonica/Aclonica-Regular.json;" scale="1.2 1.2 1.2" position="0.27 0.148 0"></a-entity>
+
+
+      <a-entity class="slide" visible="false" gltf-model="#arrow" rotation="0 0 90" scale="0.0023 0.0023 0.0023" position="-0.0891 -0.27 0"></a-entity>
+      <a-entity class="slide2" visible="false" text="value:Decrease Volume; color:#0ff; shader: msdf; font:./aclonica/Aclonica-Regular.json;" scale="1.2 1.2 1.2" position="0.3 -0.445 0"></a-entity>
+
+      <a-entity class="slide" visible="false" gltf-model="#arrow" rotation="0 0 -90" scale="0.0023 0.0023 0.0023" position="0.0778 0.02 0"></a-entity>
+      <a-entity class="slide2" visible="false" text="value:Increase Volume; color:#0ff; shader: msdf; font:./aclonica/Aclonica-Regular.json;" scale="1.2 1.2 1.2" position="0.47 0.148 0"></a-entity>
+
+      <a-entity class="slide" visible="false" gltf-model="#arrow" rotation="0 0 90" scale="0.0023 0.0023 0.0023" position="0.2447 -0.27 0"></a-entity>
+      <a-entity class="slide2" visible="false" text="value:Bluetooth; color:#0ff; shader: msdf; font:./aclonica/Aclonica-Regular.json;" scale="1.2 1.2 1.2" position="0.73 -0.445 0"></a-entity>
+
+      <a-entity class="slide" visible="false" gltf-model="#arrow" rotation="0 0 -90" scale="0.0023 0.0023 0.0023" position="0.4116 0.02 0"></a-entity>
+      <a-entity class="slide2" visible="false" text="value:AUX; color:#0ff; shader: msdf; font:./aclonica/Aclonica-Regular.json;" scale="1.2 1.2 1.2" position="0.95 0.148 0"></a-entity>
+
+
+      <a-entity class="slide" id="faqtext" visible="false" text="value:TO KNOW MORE ABOUT THESE BUTTONS, TAP HERE; color:#fff; shader: msdf; font:./aclonica/Aclonica-Regular.json;" scale="1.2 1.2 1.2" position="0.03 -0.59 0"></a-entity>
+      <a-plane  class="slide2 clickable button0" visible="false" id="modalBtnB" color="#67a5aa" opaciy="0.5" position="0 -0.57 -0.0000001" height="0.08" width="1.16" rotation="0 0 0"></a-plane>
+
+      </a-plane>
+    </xrextras-named-image-target>
+
+
+
+    <xrextras-named-image-target name="Side">
+      <a-plane id="newplace" color="#fff" opacity="0.0" position="0 0 0" scale="1 1 1" height="100" width="100" rotation="0 0 0">
+
+      <a-entity class="slide3" visible="false" gltf-model="#arrow" rotation="0 0 90" scale="0.0023 0.0023 0.0023" position="-0.273 -0.21 0"></a-entity>
+      <a-entity class="slide4" visible="false" text="value:Mic-off button; color:#000; shader: msdf; font:./aclonica/Aclonica-Regular.json;" scale="1.2 1.2 1.2" position="0.25 -0.455 0"></a-entity>
+
+      <a-entity class="slide3" visible="false" gltf-model="#arrow" rotation="0 0 90" scale="0.0023 0.0023 0.0023" position="0.295 -0.21 0"></a-entity>
+      <a-entity class="slide4" visible="false" text="value:Action button; color:#0ff; shader: msdf; font:./aclonica/Aclonica-Regular.json;" scale="1.2 1.2 1.2" position="0.86 -0.455 0"></a-entity>
+
+      <a-entity class="slide3" visible="false"  id="faqtext2" text="value:To2 know more about this audio player, tap here; color:#000; shader: msdf; font:./aclonica/Aclonica-Regular.json;" scale="1.2 1.2 1.2" position="0 0.28 0"></a-entity>
+      <a-plane  class="slide4 clickable" visible="false" id="faq2"  color="#fff" opaciy="0.5" position="-0.065 0.3 -0.0000001" height="0.08" width="1.1" rotation="0 0 0"></a-plane>
+
+    </a-plane>
+
+    </xrextras-named-image-target>
+
+
+
+  </a-scene>
+<script type="text/javascript">
+// var flag = 0;
+//
+// const faq = document.querySelector('#faq');
+//       faq.addEventListener("click", event => {
+//
+//
+//         document.querySelector('.top-right2').style.display = "block";
+//         document.querySelector('#bottom-right2').style.display = "block";
+//
+//         document.querySelector('#info2').style.display = "inline-block";
+//         document.querySelector('#start').style.display = "none";
+//
+//         document.querySelector('.top-right').style.display = "none";
+//         document.querySelector('#bottom-right').style.display = "none";
+//         document.querySelector('#next').click();
+//         document.querySelector('#next').style.display = "none";
+//         document.querySelector('#prev').style.display = "none";
+//         document.querySelector('#info').style.display = "none";
+//         flag++;
+//         if(flag <= 2)
+//         {
+//           document.querySelector('#start2').style.display = "block";
+//
+//         }
+//
+//         if(flag >= 2)
+//         {
+//         document.querySelector('#start2').style.display = "none";
+//         document.querySelector('#next2').style.display = "block";
+//         document.querySelector('#prev2').style.display = "block";
+//
+//       }
+//     });
+//     var flag2 = 0;
+//
+//     const faq2 = document.querySelector('#faq2');
+//           faq2.addEventListener("click", event => {
+//             document.querySelector('.top-right').style.display = "block";
+//             document.querySelector('#bottom-right').style.display = "block";
+//
+//             document.querySelector('#info').style.display = "inline-block";
+//
+//             document.querySelector('#start2').style.display = "none";
+//
+//             document.querySelector('.top-right2').style.display = "none";
+//             document.querySelector('#bottom-right2').style.display = "none";
+//             document.querySelector('#next2').click();
+//             document.querySelector('#next2').style.display = "none";
+//             document.querySelector('#prev2').style.display = "none";
+//             document.querySelector('#info2').style.display = "none";
+//             flag2++;
+//
+//             if(flag2 <= 1)
+//             {
+//               document.querySelector('#start').style.display = "block";
+//
+//             }
+//
+//             if(flag2 >= 1)
+//             {
+//             document.querySelector('#start').style.display = "none";
+//             document.querySelector('#next').style.display = "block";
+//             document.querySelector('#prev').style.display = "block";
+//
+//           }
+//
+//         });
+
+</script>
+  <script src="slideshow.js" charset="utf-8"></script>
+  <script src="slideshow2.js" charset="utf-8"></script>
+  <script src="modal.js" charset="utf-8"></script>
+
+</body>
+</html>
